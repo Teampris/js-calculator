@@ -1,37 +1,72 @@
-body {
-    min-width: 200px;
+.container {
     display: flex;
     height: 100vh;
     justify-content: center;
-    margin: 0;
+    align-items: center;
+    padding: 20px;
 }
 
-#container {
+.box {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    margin: 100px 10px 10px 10px;
-    aspect-ratio: 1/1;
+    justify-content: center;
+    align-items: stretch;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     min-width: 200px;
-    min-height: 200px;
     max-width: 800px;
-    max-height: 400px;
-    background-color: aquamarine;
-    padding: 5px;
-    overflow: auto;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
 }
 
-#screen {
-    padding: 5px;
+.calculator {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.button-container {
+.display {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    font-size: 2em;
+    flex: 1;
+    margin-bottom: 5px;
+}
+
+.buttons {    
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
-.button-container button {
-    padding: 5px;
-    flex-basis: calc(25% - 10px);
-    margin: 5px;
+.buttons button {
+    flex: 1 0 calc(25% - 1px);
+    padding: 20px;
+    font-size: 1.5em;
+    border: none;
+    cursor: pointer;
+    border-right: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
+    background: #f0f0f0;
+    transition: background 0.1s ease;
+}
+
+.buttons button:hover {
+    background: #e0e0e0;
+}
+/* Remove border from last 4 buttons in each row */
+.buttons button:nth-child(4n) {
+    border-right: none;
+}
+  
+/* Remove bottom border from last row of buttons */
+.buttons button:nth-child(n+17) {
+    border-bottom: none;
+}
+.buttons button:last-child {
+    border-right: none;
 }
